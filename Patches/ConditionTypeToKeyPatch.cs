@@ -2,9 +2,9 @@ using System;
 using System.Reflection;
 using HarmonyLib;
 using SPT.Reflection.Patching;
-using YATMQuestConditions.Client.Models;
+using YetAnotherTraderMod.Client.Models;
 
-namespace YATMQuestConditions.Client.Patches
+namespace YetAnotherTraderMod.Client.Patches
 {
     internal class ConditionTypeToKeyPatch : ModulePatch
     {

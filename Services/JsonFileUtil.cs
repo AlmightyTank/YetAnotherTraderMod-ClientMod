@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace YATMQuestConditions.Client.Services
+namespace YetAnotherTraderMod.Client.Services
 {
     public static class JsonFileUtil
     {

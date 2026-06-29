@@ -4,7 +4,7 @@ using System.Reflection;
 using EFT.Quests;
 using Newtonsoft.Json;
 
-namespace YATMQuestConditions.Client.Models
+namespace YetAnotherTraderMod.Client.Models
 {
     // The class name intentionally matches EFT's condition converter:
     // conditionType "weaponDurability" -> ConditionweaponDurability

@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace YATMQuestConditions.Client.Services
+namespace YetAnotherTraderMod.Client.Services
 {
     public static class ReflectionValueReader
     {

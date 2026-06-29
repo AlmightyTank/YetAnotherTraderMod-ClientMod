@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace YATMQuestConditions.Client.Models
+namespace YetAnotherTraderMod.Client.Models
 {
     public sealed class WeaponDurabilityConfig
     {

@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.IO;
 using BepInEx.Logging;
-using YATMQuestConditions.Client.Models;
+using YetAnotherTraderMod.Client.Models;
 
-namespace YATMQuestConditions.Client.Services
+namespace YetAnotherTraderMod.Client.Services
 {
     public static class WeaponDurabilityRules
     {
@@ -97,6 +97,31 @@ namespace YATMQuestConditions.Client.Services
             }
 
             return null;
+        }
+
+        private static readonly Dictionary<string, WeaponDurabilityRule> RulesByCounterCreatorId = [];
+
+        public static void AddOrUpdateCounterRule(string counterCreatorId, WeaponDurabilityRule rule)
+        {
+            if (string.IsNullOrWhiteSpace(counterCreatorId) || rule == null)
+            {
+                return;
+            }
+
+            RulesByCounterCreatorId[counterCreatorId] = rule;
+        }
+
+        public static bool TryGetByCounterCreatorId(string counterCreatorId, out WeaponDurabilityRule rule)
+        {
+            if (string.IsNullOrWhiteSpace(counterCreatorId))
+            {
+                rule = null;
+                return false;
+            }
+
+            return RulesByCounterCreatorId.TryGetValue(counterCreatorId, out rule)
+                && rule != null
+                && rule.Enabled;
         }
     }
 }

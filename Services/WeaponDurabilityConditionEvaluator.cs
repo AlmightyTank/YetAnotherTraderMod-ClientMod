@@ -1,6 +1,6 @@
-﻿using YATMQuestConditions.Client.Models;
+﻿using YetAnotherTraderMod.Client.Models;
 
-namespace YATMQuestConditions.Client.Services
+namespace YetAnotherTraderMod.Client.Services
 {
     public static class WeaponDurabilityConditionEvaluator
     {

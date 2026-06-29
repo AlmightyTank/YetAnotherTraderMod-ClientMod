@@ -1,7 +1,7 @@
 using System.IO;
 using System.Reflection;
 
-namespace YATMQuestConditions.Client.Services
+namespace YetAnotherTraderMod.Client.Services
 {
     public static class PluginPathService
     {

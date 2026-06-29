@@ -1,6 +1,6 @@
 using System;
 
-namespace YATMQuestConditions.Client.Services
+namespace YetAnotherTraderMod.Client.Services
 {
     public static class WeaponDurabilityCompare
     {

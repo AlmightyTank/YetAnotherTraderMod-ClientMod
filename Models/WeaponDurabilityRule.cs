@@ -1,4 +1,4 @@
-namespace YATMQuestConditions.Client.Models
+namespace YetAnotherTraderMod.Client.Models
 {
     public sealed class WeaponDurabilityRule
     {
@@ -8,5 +8,6 @@ namespace YATMQuestConditions.Client.Models
         public bool UseCurrentDurability { get; set; } = true;
         public string SourceConditionId { get; set; }
         public string BoundKillConditionId { get; set; }
+        public string BoundCounterCreatorId { get; set; }
     }
 }

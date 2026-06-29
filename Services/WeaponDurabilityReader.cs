@@ -2,7 +2,7 @@ using System;
 using System.Reflection;
 using EFT.InventoryLogic;
 
-namespace YATMQuestConditions.Client.Services
+namespace YetAnotherTraderMod.Client.Services
 {
     public static class WeaponDurabilityReader
     {

@@ -1,11 +1,12 @@
-using System.Reflection;
 using EFT.Quests;
 using HarmonyLib;
 using SPT.Reflection.Patching;
-using YATMQuestConditions.Client.Models;
-using YATMQuestConditions.Client.Services;
+using System.Reflection;
+using YetAnotherTraderMod.Client;
+using YetAnotherTraderMod.Client.Models;
+using YetAnotherTraderMod.Client.Services;
 
-namespace YATMQuestConditions.Client.Patches
+namespace YetAnotherTraderMod.Client.Patches
 {
     internal class ConditionCounterCreatorDurabilityPatch : ModulePatch
     {
@@ -46,32 +47,27 @@ namespace YATMQuestConditions.Client.Patches
                 return;
             }
 
-            var killConditionId = killCondition.id;
-            var durabilityConditionId = durabilityCondition.id;
-
-            if (string.IsNullOrWhiteSpace(killConditionId))
-            {
-                return;
-            }
-
             var rule = new WeaponDurabilityRule
             {
                 Enabled = true,
-                CompareMethod = ReflectionValueReader.TryReadString(durabilityCondition, "compareMethod") ?? "<=",
-                Value = ReflectionValueReader.TryReadFloat(durabilityCondition, "value") ?? 60f,
-                UseCurrentDurability = durabilityCondition.useCurrentDurability,
-                SourceConditionId = durabilityConditionId,
-                BoundKillConditionId = killConditionId
+                BoundCounterCreatorId = __instance.id,
+                BoundKillConditionId = killCondition.id,
+                SourceConditionId = durabilityCondition.id,
+                CompareMethod = durabilityCondition.GetCompareMethod(),
+                Value = durabilityCondition.GetRequiredValue(),
+                UseCurrentDurability = durabilityCondition.useCurrentDurability
             };
 
-            WeaponDurabilityRules.AddOrUpdateRule(killConditionId, rule);
+            WeaponDurabilityRules.AddOrUpdateCounterRule(__instance.id, rule);
 
             Plugin.LogSource.LogInfo(
-                "[YATM Quest Conditions] Bound ConditionweaponDurability " +
-                durabilityConditionId +
-                " to Kills condition " +
-                killConditionId +
-                " durability " +
+                "[YATM Quest Conditions] Bound weaponDurability " +
+                durabilityCondition.id +
+                " to CounterCreator " +
+                __instance.id +
+                " / Kills " +
+                killCondition.id +
+                " rule=" +
                 rule.CompareMethod +
                 " " +
                 rule.Value

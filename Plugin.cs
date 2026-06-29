@@ -1,8 +1,8 @@
 using BepInEx;
 using BepInEx.Logging;
-using YATMQuestConditions.Client.Services;
+using YetAnotherTraderMod.Client.Services;
 
-namespace YATMQuestConditions.Client
+namespace YetAnotherTraderMod.Client
 {
     [BepInPlugin("com.almightytank.yatm.questconditions", "YATM Quest Conditions", "1.0.0")]
     public sealed class Plugin : BaseUnityPlugin

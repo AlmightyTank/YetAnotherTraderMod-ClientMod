@@ -2,11 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <RootNamespace>YATMQuestConditions.Client</RootNamespace>
+    <RootNamespace>YetAnotherTraderMod.Client</RootNamespace>
     <Nullable>disable</Nullable>
     <Authors>AlmightyTank</Authors>
     <Copyright></Copyright>
-    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <AssemblyVersion>0.1.1</AssemblyVersion>
     <FileVersion>$(AssemblyVersion)</FileVersion>
     <Configurations>Debug;Release;Package</Configurations>
     <Version>$(AssemblyVersion)</Version>
@@ -17,7 +17,7 @@
     <!-- SPT root folder. Override with: dotnet build /p:SptPath="C:\RealSPT" -->
     <SptPath Condition="'$(SptPath)' == ''">C:\RealSPT</SptPath>
     <ManagedPath>$(SptPath)\EscapeFromTarkov_Data\Managed</ManagedPath>
-    <PluginOutputPath>$(SptPath)\BepInEx\plugins\YATMQuestConditions.Client</PluginOutputPath>
+    <PluginOutputPath>$(SptPath)\BepInEx\plugins\YetAnotherTraderMod.Client</PluginOutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
