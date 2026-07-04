@@ -4,7 +4,7 @@ using YetAnotherTraderMod.Client.Services;
 
 namespace YetAnotherTraderMod.Client
 {
-    [BepInPlugin("com.almightytank.yatm.questconditions", "YATM Quest Conditions", "1.0.0")]
+    [BepInPlugin("com.almightytank.yatmclient", "YATM ClientMod", "1.0.0")]
     public sealed class Plugin : BaseUnityPlugin
     {
         internal static ManualLogSource LogSource;
@@ -20,7 +20,7 @@ namespace YetAnotherTraderMod.Client
             new Patches.ConditionCounterCreatorDurabilityPatch().Enable();
             new Patches.KillConditionDurabilityPatch().Enable();
 
-            LogSource.LogInfo("[YATM Quest Conditions] Loaded.");
+            LogSource.LogInfo("[YATM ClientMod PreLoad] Loaded.");
         }
     }
 }
